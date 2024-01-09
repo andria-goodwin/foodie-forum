@@ -59,14 +59,4 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="file"] {
-  margin-bottom: 20px;
-}
-
-img {
-  height: 300px;
-  width: auto;
-}
-
-
 

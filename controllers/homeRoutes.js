@@ -7,13 +7,8 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-// get route to render 'login.handlebars'
-router.get('/login', (req, res) => {
-    res.render('login');
-});
-
 // get route to render 'post.handlebars'
-router.get('/post', (req, res) => {
+router.get('/post', withAuth, (req, res) => {
     res.render('post');
 });
 
@@ -27,7 +22,7 @@ router.get('/profile', withAuth, async (req, res) => {
   
       const user = userData.get({ plain: true });
   
-      res.render('profile', {
+      res.render('post', {
         ...user,
         logged_in: true
       });
