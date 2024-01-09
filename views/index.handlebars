@@ -1,10 +1,19 @@
-<body>
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button onclick="search()">Search</button>
+
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="search()">Search</button>
+</div>
+<div id="searchResults">
+</div>
+
+{{#each foods as |food|}}
+    <div>
+      {{food.user_id}}
+      {{food.date_created}}
+      {{food.name}}
+      {{food.restaurant}}
+      {{food.description}}
+      {{food.star_rating}} out of 5 stars
     </div>
-    <div id="searchResults">
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+{{/each}}
+<script src="script.js"></script>

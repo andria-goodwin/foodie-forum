@@ -15,4 +15,21 @@
   <input type="submit" value="Create Post">
 </form>
 
+{{#if foods.length}}
+  <div>
+    <h3>Your Posts:</h3>
+
+    {{#each foods as |food|}}
+    <div>
+      {{food.user_id}}
+      {{food.date_created}}
+      {{food.name}}
+      {{food.restaurant}}
+      {{food.description}}
+      {{food.star_rating}} out of 5 stars
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
 <script src="/js/post.js"></script>
