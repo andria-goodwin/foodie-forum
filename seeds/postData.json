@@ -5,6 +5,21 @@
       "description": "Breaded chicken with parmesan over spaghetti",
       "star_rating": 4,
       "user_id": 2
+    },
+    {
+      "name": "Pork Lo Mein",
+      "restaurant": "Dragon City",
+      "description": "Egg noodles with pork and vegetables in a lo mein sauce",
+      "star_rating": 5,
+      "user_id": 3
+    },
+    {
+      "name": "Dr. Caribbean Salad",
+      "restaurant": "Doc Greens",
+      "description": "Spring mix salad topped with pineapple, strawberries, and grapes as well as jerk seasoned salmon and a light seasame dressing",
+      "star_rating": 5,
+      "user_id": 2
     }
 ]
+
   
