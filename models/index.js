@@ -1,4 +1,4 @@
-const User = require('./user');
+const User = require('./User');
 const Food = require('./Food');
 
 User.hasMany(Food, {
@@ -6,7 +6,7 @@ User.hasMany(Food, {
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+Food.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
