@@ -3,13 +3,25 @@ const { Food, User } = require('../models');
 const withAuth = require('../utils/authority');
 
 // get route to render 'index.handlebars'
-router.get('/', (req, res) => {
-    res.render('index');
+router.get('/', async (req, res) => {
+    const foodData = await Food.findAll().catch((err) => { 
+      res.json(err);
+    });
+    // We use map() to iterate over foodData and then add .get({ plain: true }) each object to serialize it. 
+    const foods = foodData.map((food) => food.get({ plain: true }));
+    // We render the template, 'index', passing in foods, a new array of serialized objects.
+    res.render('index', { foods });
 });
 
 // get route to render 'post.handlebars'
-router.get('/post', withAuth, (req, res) => {
-    res.render('post');
+router.get('/post', withAuth, async (req, res) => {
+  const foodData = await Food.findAll().catch((err) => { 
+    res.json(err);
+  });
+  // We use map() to iterate over foodData and then add .get({ plain: true }) each object to serialize it. 
+  const foods = foodData.map((food) => food.get({ plain: true }));
+  // We render the template, 'post', passing in foods, a new array of serialized objects.
+  res.render('post', { foods });
 });
 
 router.get('/profile', withAuth, async (req, res) => {
