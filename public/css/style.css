@@ -58,3 +58,15 @@ input[type="submit"] {
   padding: 10px;
   cursor: pointer;
 }
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+img {
+  height: 300px;
+  width: auto;
+}
+
+
+
