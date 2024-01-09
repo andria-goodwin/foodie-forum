@@ -1,4 +1,7 @@
-function search () { 
-    var searchTerm = document.getElementById("searchInput").value; 
-    document.getElementById("searchResults").innerHTML = "<p>Search Results: " + searchTerm + "</p>"
-}
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+
+searchButton.addEventListener('click', function() {
+    const query = searchInput.ariaValueMax;
+    console.log('Searching for: ' + query);
+});
