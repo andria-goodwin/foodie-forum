@@ -1,43 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Forum Post</title>
-</head>
-<body>
-    <!-- image uploading -->
-    <main class="app">
+<h1>Create New Post</h1>
 
-        <div class="header">
-            <h2>New Post</h2>
-            <div class="server-message"></div>
-        </div>
+<form>
+  <label for="name">Dish Name:</label>
+  <input type="text" id="name" name="name" required>
 
-        <div class="input-div">
-            <p>Drag and drog images here or <span class="browse">Browse</span></p>
-            <input type="file" class="file" multiple="multiple" accept="image/png, image/jpeg, image/jpg">
-        </div>
+  <label for="restaurant">Restaurant:</label>
+  <input type="text" id="restaurant" name="restaurant" required>
 
-        <form id="saved-form">
-            <div class="header">
-                <h3>Saved In Server</h3>
-                <button type="submit">Delete</button>
-            </div>
-            <div class="saved-div"></div>
-        </form>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" required>
 
-        <form id="queued-form">
-            <div class="header">
-                <h3>Queued In Frontend</h3>
-                <button type="submit">Upload</button>
-            </div>
-            <div class="queued-div"></div>
-        </form>
+  <label for="star-rating">Star Rating (out of 5 stars):</label>
+  <input type="text" id="star-rating" name="star-rating" required>
 
-    </main>
+  <input type="submit" value="Post Dish">
+</form>
 
-    <script src="./js/post.js"></script>
-    
-</body>
-</html>
+<script src="/js/post.js"></script>

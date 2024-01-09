@@ -11,20 +11,25 @@ Food.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        description: {
-            type: DataTypes.STRING,
-        },
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        foods: {
+        name: {
             type: DataTypes.STRING,
+            allowNull: false,
+        },
+        restaurant: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        star_rating: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         user_id: {
@@ -34,5 +39,15 @@ Food.init(
               key: 'id',
             },
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'food',
     }
-)
+);
+
+module.exports = Food;
+
