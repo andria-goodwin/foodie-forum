@@ -1,41 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search-input');
-    const searchButton = document.getElementById('search-button');
-    const searchResultsContainer = document.getElementById('search-results');
+function search() {
+    var input, filter, foods, foodItems, i, txtValue;
+    input = document.getElementById('search-input');
+    filter = input.value.toUpperCase();
+    foods = document.getElementsByClassName('food-item');
 
-    // searchButton.addEventListener('click', function() {
-    //     const searchTerm = searchInput.value.trim().toLowerCase();
-    //     if (searchTerm !== '') {
-    //         const searchResults = performSearch(searchTerm);
-    //         displaySearchResults(searchResults);
-    //     } else {
-    //         searchResultsContainer.innerHTML = 'Please enter keywords to search.';
-    //     }
-    // });
+    for (i = 0; i < foods.length; i++) {
+        foodItems = foods[i];
+        txtValue = foodItems.textContent || foodItems.innerText;
 
-    function performSearch(searchTerm) {
-        const searchableElements = document.querySelectorAll('p, h1, h2, h3, a');
-
-        const results = [];
-
-        searchableElements.forEach(element => {
-            const content = element.textContent.toLowerCase();
-            if (content.includes(searchTerm)) {
-                results.push({
-                    text: content,
-                    element: element
-                });
-            }
-        });
-
-        return results;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            foods[i].style.display = "";
+        } else {
+            foods[i].style.display = "none";
+        }
     }
-
-    function displaySearchResults(results) {
-        const resultsHtml = results.map(result => {
-            return `<p>Found in: ${result.text}</p>`;
-        }).join('');
-
-        searchResultsContainer.innerHTML = resultsHtml || 'No results found.';
-    }
-});
+}
