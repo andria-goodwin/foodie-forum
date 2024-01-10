@@ -29,7 +29,7 @@
         <li class="nav-item"></li>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <button class="no-button" id="logout">Logout</button>
+          <a class="nav-link" id="logout" href="/index">Logout</a>
         {{else}}
         <a class="nav-link" href="/login">Login</a>
         {{/if}}
