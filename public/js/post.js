@@ -1,4 +1,5 @@
 const submit = document.querySelector('#submit');
+const deleteBtn = document.querySelector('#delete');
 
 const postHandler = async (event) => {
     event.preventDefault();
@@ -19,7 +20,7 @@ const postHandler = async (event) => {
       console.log(response);
   
       if (response.ok) {
-        document.location.replace('/post');
+        document.location.reload();
         alert('Post Created!');
       } else {
         alert(response.statusText);
@@ -27,4 +28,22 @@ const postHandler = async (event) => {
     }
   };
 
-  submit.addEventListener('click', postHandler)
+  const deletePost = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/post/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.reload();
+        alert('Deleted Post!');
+      } else {
+        alert('Failed to delete project');
+      }
+    }
+  }
+
+  submit.addEventListener('click', postHandler);
+  deleteBtn.addEventListener('click', deletePost);
