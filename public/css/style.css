@@ -2,10 +2,19 @@
 :root {
   --bgcolor: #D8F0A0;
   --navColor: #80A035;
+  --headings: 'Permanent Marker', cursive;
+  --text: 'Shadows Into Light', cursive;
+}
+
+* {
+  font-family: var(--text);
+  font-weight: bold;
+  font-size: large;
 }
 
 html {
   background-color: var(--bgcolor);
+  padding: 1.5%;
 }
 
 .page {
@@ -120,5 +129,11 @@ input[type="submit"] {
   border: 1px solid black;
   padding: 30px;
   margin: auto;
+}
+
+/* heading fonts*/
+
+.heading {
+  font-family: var(--headings);
 }
 
