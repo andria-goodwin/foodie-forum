@@ -1,3 +1,4 @@
+<div class="post-page">
 <h1>Profile</h1>
 <h3>Create New Post</h3>
 <form>
@@ -13,7 +14,7 @@
   <label for="star-rating">Star Rating (out of 5 stars):</label>
   <input type="text" id="star-rating" name="star-rating" required>
 
-  <input type="submit" id="submit" value="Create Post">
+  <input type="submit" id="submit" value="Create Post" style="margin-top: 10px;">
 </form>
 
 {{#if foods.length}}
@@ -21,7 +22,7 @@
     <h3>Your Posts:</h3>
 
     {{#each foods as |food|}}
-    <div>
+    <div class="your-posts">
       {{food.user_id}}
       {{food.date_created}}
       {{food.name}}
@@ -32,5 +33,7 @@
     {{/each}}
   </div>
   {{/if}}
+
+  </div>
 
 <script src="/js/post.js"></script>
