@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie Forum</title>
+    <style>
+        .search-container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search the Forum">
-        <button id="search-button">
-            <i class="fa fa search"></i>
-        </button>
+        <input type="text" id="search-input" placeholder="Search the Forum" oninput="search()">
     </div>
     <div id="search-results"></div>
     {{#each foods as |food|}}
-    <div>
-      {{food.name}} <br>
-      Restaurant: {{food.restaurant}} <br>
-      {{food.description}} <br>
-      {{food.star_rating}} out of 5 stars <br>
-      {{food.date_created}}
+    <div class="food-item">
+        {{food.name}} <br>
+        Restaurant: {{food.restaurant}} <br>
+        {{food.description}} <br>
+        {{food.star_rating}} out of 5 stars <br>
+        {{food.date_created}}
     </div>
     {{/each}}
     <script src="/js/script.js"></script>
