@@ -1,16 +1,18 @@
+const submit = document.querySelector('#submit');
+
 const postHandler = async (event) => {
     event.preventDefault();
-  
+    
     const name = document.querySelector('#name').value;
     const restaurant = document.querySelector('#restaurant').value;
     const description = document.querySelector('#description').value;
-    const starRating = document.querySelector('#star-rating').value;
+    const star_rating = document.querySelector('#star-rating').value;
     
   
-    if (name && restaurant && description && starRating) {
+    if (name && restaurant && description && star_rating) {
       const response = await fetch('/api/post', {
         method: 'POST',
-        body: JSON.stringify({ name, restaurant, description, starRating }),
+        body: JSON.stringify({ name, restaurant, description, star_rating }),
         headers: { 'Content-Type': 'application/json' },
       });
 
@@ -18,8 +20,11 @@ const postHandler = async (event) => {
   
       if (response.ok) {
         document.location.replace('/post');
+        alert('Post Created!');
       } else {
         alert(response.statusText);
       }
     }
   };
+
+  submit.addEventListener('click', postHandler)

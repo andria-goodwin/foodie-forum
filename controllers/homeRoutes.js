@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     // We use map() to iterate over foodData and then add .get({ plain: true }) each object to serialize it. 
     const foods = foodData.map((food) => food.get({ plain: true }));
     // We render the template, 'index', passing in foods, a new array of serialized objects.
+    console.log('FOODS:', foods);
     res.render('index', { foods });
 });
 
