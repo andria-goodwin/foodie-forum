@@ -3,15 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('search-button');
     const searchResultsContainer = document.getElementById('search-results');
 
-    searchButton.addEventListener('click', function() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        if (searchTerm !== '') {
-            const searchResults = performSearch(searchTerm);
-            displaySearchResults(searchResults);
-        } else {
-            searchResultsContainer.innerHTML = 'Please enter keywords to search.';
-        }
-    });
+    // searchButton.addEventListener('click', function() {
+    //     const searchTerm = searchInput.value.trim().toLowerCase();
+    //     if (searchTerm !== '') {
+    //         const searchResults = performSearch(searchTerm);
+    //         displaySearchResults(searchResults);
+    //     } else {
+    //         searchResultsContainer.innerHTML = 'Please enter keywords to search.';
+    //     }
+    // });
 
     function performSearch(searchTerm) {
         const searchableElements = document.querySelectorAll('p, h1, h2, h3, a');

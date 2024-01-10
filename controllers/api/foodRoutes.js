@@ -3,7 +3,7 @@ const { Food } = require('../../models');
 const withAuth = require('../../utils/authority');
 
 router.post('/', withAuth, async (req, res) => {
-  console.log(req.body);
+  console.log('THIS IS REQ.BODY', req.body);
   try {
     const newPost = await Food.create({
       ...req.body,
