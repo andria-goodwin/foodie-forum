@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Food } = require('../../models');
 const withAuth = require('../../utils/authority');
 
+// post route for creating new food posts
+// withAuth to prevent users from posting unless they are logged in
 router.post('/', withAuth, async (req, res) => {
   console.log('THIS IS REQ.BODY', req.body);
   try {
@@ -16,6 +18,8 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// delete route for deleting food posts
+// withAuth to prevent users from deleting unless they are logged in
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Food.destroy({
@@ -26,7 +30,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 

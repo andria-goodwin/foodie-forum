@@ -1,9 +1,7 @@
 const path = require('path');
-const fs = require('fs');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-// const util = require('util');
 
 // for the API's 
 const routes = require('./controllers');
@@ -34,6 +32,7 @@ const sess = {
     })
 };
 
+// using sequalize sessions
 app.use(session(sess));
 
 // Middleware
@@ -46,9 +45,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+// using routes
 app.use(routes);
 
+//app listener
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Server is active on port ${PORT}`));
   });
