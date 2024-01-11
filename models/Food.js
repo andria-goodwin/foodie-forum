@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// adding Food to Model
 class Food extends Model {}
 
 Food.init(
@@ -40,6 +41,7 @@ Food.init(
             },
         }
     },
+    // initializing sequalize
     {
         sequelize,
         timestamps: false,

@@ -13,20 +13,22 @@
 </head>
 <body>
     <div class ="page">
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search the Forum" oninput="search()">
-    </div>
-    <div id="search-results"></div>
-    {{#each foods as |food|}}
-    <div class="food-item">
-        <div class="heading">{{food.name}}</div> <br>
-        Restaurant: {{food.restaurant}} <br>
-        Description: {{food.description}} <br>
-        {{food.star_rating}} out of 5 stars <br>
-        {{food.date_created}}
-    </div>
-    {{/each}}
-    <script src="/js/script.js"></script>
+        {{!-- Search bar --}}
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search the Forum" oninput="search()">
+        </div>
+        {{!-- Display each food post --}}
+        <div id="search-results"></div>
+        {{#each foods as |food|}}
+        <div class="food-item">
+            <div class="heading">{{food.name}}</div> <br>
+            Restaurant: {{food.restaurant}} <br>
+            Description: {{food.description}} <br>
+            {{food.star_rating}} out of 5 stars <br>
+            {{food.date_created}}
+        </div>
+        {{/each}}
+        <script src="/js/script.js"></script>
     </div>
 </body>
 </html>
