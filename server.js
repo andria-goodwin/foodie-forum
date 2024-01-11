@@ -1,9 +1,7 @@
 const path = require('path');
-const fs = require('fs');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-// const util = require('util');
 
 // for the API's 
 const routes = require('./controllers');
