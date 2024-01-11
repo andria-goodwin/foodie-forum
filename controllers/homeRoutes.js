@@ -42,38 +42,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-<<<<<<< HEAD
-// router.get('/profile', withAuth, async (req, res) => {
-//     try {
-//       // Find the logged in user based on the session ID
-//       const userData = await User.findByPk(req.session.user_id, {
-//         attributes: { exclude: ['password'] },
-//         include: [{ model: Food }],
-//       });
-  
-//       const user = userData.get({ plain: true });
-  
-//       res.render('post', {
-//         ...user,
-//         logged_in: true
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-  
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/post');
-      return;
-    }
-  
-    res.render('login');
-  });
-=======
   res.render('login');
 });
->>>>>>> 8dfa494f1688ee39a7d8221fbdca6f7a6e71b610
 
 module.exports = router;
